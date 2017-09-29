@@ -4,7 +4,7 @@
  * git clone
  * npm install
  * tsc app.ts
- * node app.ts
+ * node app.js
  
 **Hardware used:**
  * Dallas 18B20 temperature server with 1-wire interface
