@@ -17,9 +17,14 @@ class TemperatureServer {
             res.send(currentTemperature)
         });
 
-        this.app.listen(3000, function () {
+        const port = this.getPort();
+        this.app.listen(port, function () {
             process.stdout.write('Temperature server started...');
         });
+    }
+
+    private getPort() {
+        return process.env.PORT || 3100;
     }
     
 }
