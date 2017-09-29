@@ -1,16 +1,8 @@
-import * as express from 'express';
-import { temperatureReader } from './lib/temperatureReader';
+import { TemperatureServer } from './lib/temperatureServer';
 
 require('dotenv').config();
 
-const tempReader = new temperatureReader();
-const app = express();
+const server = new TemperatureServer();
+server.start();
 
-app.get('/', function (req, res) {
-    const currentTemperature = tempReader.getCurrentTemperature();
-    res.send(currentTemperature)
-});
 
-app.listen(3000, function () {
-    process.stdout.write('Temperature server started...');
-});
