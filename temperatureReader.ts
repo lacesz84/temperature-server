@@ -1,10 +1,11 @@
 import * as fs from 'fs';
 
-const fileName = '/sys/bus/w1/devices/28-0115a83cebff/w1_slave';
+const defaultFileName = '/sys/bus/w1/devices/28-0115a83cebff/w1_slave';
 
 class temperatureReader {
     
     public constructor() {
+        const fileName = this.getFileName();
         if (!fs.existsSync(fileName)) {
             console.error('Temperature file not found: ' + fileName);
             process.exit();
@@ -18,7 +19,12 @@ class temperatureReader {
         return currentTemperature;
     }
     
+    private getFileName() {
+        return process.env.FILENAME || defaultFileName;
+    }
+    
     private readFile() {
+        const fileName = this.getFileName();
         const buffer = fs.readFileSync(fileName);
         
         return buffer.toString();

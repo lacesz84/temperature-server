@@ -1,6 +1,8 @@
 import * as express from 'express';
 import { temperatureReader } from './temperatureReader';
 
+require('dotenv').config();
+
 const tempReader = new temperatureReader();
 const app = express();
 
