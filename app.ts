@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { temperatureReader } from './temperatureReader';
+import { temperatureReader } from './lib/temperatureReader';
 
 require('dotenv').config();
 
