@@ -9,10 +9,11 @@ class TemperatureServer {
     constructor() {
         this.app = express();
         this.tempReader = new temperatureReader();
+        
     }
     
     public start() {
-        this.app.get('/', function (req, res) {
+        this.app.get('/', (req, res) => {
             const currentTemperature = this.tempReader.getCurrentTemperature();
             res.send(currentTemperature)
         });
