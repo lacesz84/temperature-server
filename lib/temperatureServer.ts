@@ -4,7 +4,7 @@ import { temperatureReader } from './temperatureReader';
 class TemperatureServer {
 
     private app;
-    private tempReader;
+    private tempReader:temperatureReader;
     
     constructor() {
         this.app = express();
