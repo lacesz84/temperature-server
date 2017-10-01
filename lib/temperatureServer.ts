@@ -9,7 +9,6 @@ class TemperatureServer {
     constructor() {
         this.app = express();
         this.tempReader = new temperatureReader();
-        
     }
     
     public start() {
@@ -20,7 +19,7 @@ class TemperatureServer {
 
         const port = this.getPort();
         this.app.listen(port, function () {
-            process.stdout.write('Temperature server started...');
+            process.stdout.write(`Temperature server started on localhost:${port}...`);
         });
     }
 
