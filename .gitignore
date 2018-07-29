@@ -3,3 +3,6 @@ node_modules/
 .idea/
 .env
 *.map
+*.db
+output.html
+output.png

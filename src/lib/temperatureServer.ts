@@ -20,7 +20,11 @@ class TemperatureServer {
 
         this.app.get('/', (req, res) => {
             const currentTemperature = this.tempReader.getCurrentTemperature();
-            res.send(currentTemperature)
+            res.send(currentTemperature);
+        });
+
+        this.app.get('/graph', async (req, res) => {
+            const data = await this.temperatureLogger.getData();
         });
 
         const port = this.getPort();
