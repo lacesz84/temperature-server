@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/app.ts",
     "build": "NODE_PATH=./src tsc",
-    "start": "NODE_PATH=./dist node dist/app.js"
+    "start": "NODE_PATH=./dist node dist/src/app.js"
   },
   "author": "",
   "license": "ISC",
