@@ -25,7 +25,6 @@ class Cache {
         return dateFormat(new Date(), 'yyyy-mm-dd hh:MM');
     }
 
-
     setTemperature(currentTemperature: string) {
         const cacheTime = this.getCacheTime();
         this.cachedTemperature = {
